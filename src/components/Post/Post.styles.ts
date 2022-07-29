@@ -11,7 +11,7 @@ export const Container = styled.div`
   );
   margin: ${(p) => p.theme.medium}px;
   padding: ${(p) => p.theme.xmedium}px;
-
+  box-shadow: 3px 10px 11px 0px ${(p) => p.theme.blueGreen};
   &:hover {
     cursor: pointer;
   }

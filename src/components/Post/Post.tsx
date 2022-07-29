@@ -1,5 +1,5 @@
 import React from "react";
-import { PostTitle } from "components";
+import { PostTitle, PostHeader, PostBody } from "components";
 import { Container } from "./Post.styles";
 
 interface PostProps {
@@ -7,12 +7,13 @@ interface PostProps {
 }
 
 const Post: React.FC<PostProps> = ({ post }) => {
-  const { body, id, title, userId } = post;
+  const { body, id, title } = post;
 
   return (
     <Container>
+      <PostHeader postId={id} />
       <PostTitle text={title} />
-      <div>{body}</div>
+      <PostBody body={body} />
     </Container>
   );
 };
