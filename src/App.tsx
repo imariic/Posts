@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import { getAllPosts } from "services";
+import { postService, commentService } from "services";
 
 function App() {
   useEffect(() => {
-    getAllPosts().then((response) => console.log(response));
+    //postService.getAllPosts().then((response) => console.log(response));
+    commentService.getCommentsByPostId(1).then((res) => console.log(res));
   }, []);
   return <div className="App">haharere</div>;
 }
