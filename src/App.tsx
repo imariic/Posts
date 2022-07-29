@@ -1,12 +1,17 @@
-import React, { useEffect } from "react";
-import { postService, commentService } from "services";
+import React from "react";
+import { usePosts } from "hooks";
+import { Post } from "components";
 
 function App() {
-  useEffect(() => {
-    //postService.getAllPosts().then((response) => console.log(response));
-    commentService.getCommentsByPostId(1).then((res) => console.log(res));
-  }, []);
-  return <div className="App">haharere</div>;
+  const posts = usePosts();
+
+  return (
+    <div className="App">
+      {posts?.map((item) => (
+        <Post post={item} />
+      ))}
+    </div>
+  );
 }
 
 export default App;
