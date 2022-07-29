@@ -1,14 +1,12 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import theme from "theme";
-import { PostsPage } from "pages";
+import AppRoutes from "routes/AppRoutes";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <PostsPage />
-      </div>
+      <AppRoutes />
     </ThemeProvider>
   );
 }

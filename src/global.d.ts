@@ -13,6 +13,15 @@ declare global {
     email: string;
     body: string;
   };
+
+  type UserType = {
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    phone: string;
+    website: string;
+  };
 }
 
 export {};
