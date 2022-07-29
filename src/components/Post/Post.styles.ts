@@ -9,4 +9,10 @@ export const Container = styled.div`
     ${(p) => p.theme.pastelGreen} 35%,
     ${(p) => p.theme.teaGreen} 100%
   );
+  margin: ${(p) => p.theme.medium}px;
+  padding: ${(p) => p.theme.xmedium}px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;

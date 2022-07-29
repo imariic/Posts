@@ -1,18 +1,13 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { usePosts } from "hooks";
-import { Post } from "components";
 import theme from "theme";
+import { PostsPage } from "pages";
 
 function App() {
-  const posts = usePosts();
-
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        {posts?.map((item) => (
-          <Post post={item} />
-        ))}
+        <PostsPage />
       </div>
     </ThemeProvider>
   );
