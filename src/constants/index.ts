@@ -6,3 +6,11 @@ export const dimensions = {
   large: 32,
   xlarge: 40,
 };
+
+export const colors = {
+  wageningenGreen: "#2EB62C",
+  appleGreen: "#57C84D",
+  pastelGreen: "#83D475",
+  grannySmithAppleGreen: "#ABE098",
+  teaGreen: "#C5E8B7",
+};
