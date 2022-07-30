@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PostTitle, PostHeader, PostBody } from "components";
+import { UsersContext } from "providers";
 import { Container } from "./Post.styles";
 
 interface PostProps {
@@ -10,6 +11,7 @@ interface PostProps {
 const Post: React.FC<PostProps> = ({ post }) => {
   const navigate = useNavigate();
   const params = useParams();
+  const users = useContext(UsersContext);
 
   const isNotTriggered = params.id;
   const { body, id, title } = post;
@@ -24,11 +26,19 @@ const Post: React.FC<PostProps> = ({ post }) => {
     });
   };
 
+  const renderName = () => {
+    const { userId } = post;
+    const user = users.find((item) => item.id === userId);
+
+    return <PostBody body={`Name: ${user?.name}`} />;
+  };
+
   return (
     <Container onClick={handlePostPress}>
       <PostHeader postId={id} />
       <PostTitle text={title} />
       <PostBody body={body} />
+      {renderName()}
     </Container>
   );
 };

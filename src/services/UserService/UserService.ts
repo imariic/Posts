@@ -8,4 +8,12 @@ const getUserById = async (userId: number) => {
   return [];
 };
 
-export default { getUserById };
+const getAllUsers = async () => {
+  const response = await axiosInstance.get("/users");
+
+  if (response) return response.data;
+
+  return [];
+};
+
+export default { getUserById, getAllUsers };
