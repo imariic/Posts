@@ -21,7 +21,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
 
   useEffect(() => {
     modalContext.setIsVisible(false);
-  }, [modalContext]);
+  }, []);
 
   const handlePostPress = () => {
     if (isNotTriggered) return;
