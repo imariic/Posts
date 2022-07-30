@@ -1,15 +1,19 @@
-import React, { useId } from "react";
+import React from "react";
 import { Post } from "components";
 import { usePosts } from "hooks";
-import { Container } from "./PostsPage.styles";
+import { Search } from "ui";
+import { Container, PostList } from "./PostsPage.styles";
 
 const PostsPage = () => {
   const posts = usePosts();
   return (
     <Container>
-      {posts?.map((post) => (
-        <Post key={post.id} post={post} />
-      ))}
+      <Search />
+      <PostList>
+        {posts?.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
+      </PostList>
     </Container>
   );
 };
