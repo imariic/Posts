@@ -1,4 +1,5 @@
 import React from "react";
+import { withDisplayName } from "hoc";
 import { Title } from "./PostTitle.styles";
 
 interface PostTitleProps {
@@ -9,4 +10,6 @@ const PostTitle: React.FC<PostTitleProps> = ({ text }) => {
   return <Title>{text}</Title>;
 };
 
-export default PostTitle;
+PostTitle.displayName = "PostTitle";
+
+export default withDisplayName(PostTitle);

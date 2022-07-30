@@ -1,8 +1,9 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { withDisplayName } from "hoc";
 import { PostDetailsPage, PostsPage } from "pages";
 
-const AppRoutes = () => {
+const AppRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="posts" />} />
@@ -12,4 +13,6 @@ const AppRoutes = () => {
   );
 };
 
-export default AppRoutes;
+AppRoutes.displayName = "AppRoutes";
+
+export default withDisplayName(AppRoutes);

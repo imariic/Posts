@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PostTitle, PostHeader, PostBody } from "components";
 import { ModalContext, UsersContext } from "providers";
+import { withDisplayName } from "hoc";
 import { findUser } from "helpers";
 import { Button } from "ui";
 import { Container, ButtonContainer } from "./Post.styles";
@@ -61,4 +62,6 @@ const Post: React.FC<PostProps> = ({ post }) => {
   );
 };
 
-export default Post;
+Post.displayName = "Post";
+
+export default withDisplayName(Post);

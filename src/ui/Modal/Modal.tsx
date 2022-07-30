@@ -1,4 +1,5 @@
 import React from "react";
+import { withDisplayName } from "hoc";
 import { Container, Content } from "./Modal.styles";
 
 interface ModalProps {
@@ -18,4 +19,6 @@ const Modal: React.FC<ModalProps> = ({ setIsVisible, children }) => {
   );
 };
 
-export default Modal;
+Modal.displayName = "Modal";
+
+export default withDisplayName(Modal);

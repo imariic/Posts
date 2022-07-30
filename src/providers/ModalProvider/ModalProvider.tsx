@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Comment } from "components";
 import { Modal } from "ui";
+import { withDisplayName } from "hoc";
 import { commentService } from "services";
 
 interface ModalContextType {
@@ -45,4 +46,7 @@ const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
     </ModalContext.Provider>
   );
 };
-export default ModalProvider;
+
+ModalProvider.displayName = "ModalProvider";
+
+export default withDisplayName(ModalProvider);

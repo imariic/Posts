@@ -1,4 +1,5 @@
 import React from "react";
+import { withDisplayName } from "hoc";
 import { Container, Content } from "./Comment.styles";
 
 interface CommentProps {
@@ -13,4 +14,6 @@ const Comment: React.FC<CommentProps> = ({ content }) => {
   );
 };
 
-export default Comment;
+Comment.displayName = "Comment";
+
+export default withDisplayName(Comment);

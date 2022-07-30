@@ -1,5 +1,6 @@
 import React from "react";
 import _ from "lodash";
+import { withDisplayName } from "hoc";
 import { Input } from "./Search.styles";
 
 interface SearchProps {
@@ -20,4 +21,6 @@ const Search: React.FC<SearchProps> = ({ searchTerm, setSearchTerm }) => {
   return <Input onChange={handleChange} />;
 };
 
-export default Search;
+Search.displayName = "Search";
+
+export default withDisplayName(Search);

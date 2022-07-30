@@ -3,9 +3,10 @@ import { Post } from "components";
 import { usePosts } from "hooks";
 import { Search } from "ui";
 import { filterPosts } from "helpers";
+import { withDisplayName } from "hoc";
 import { Container, PostList } from "./PostsPage.styles";
 
-const PostsPage = () => {
+const PostsPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const posts = usePosts();
 
@@ -23,4 +24,6 @@ const PostsPage = () => {
   );
 };
 
-export default PostsPage;
+PostsPage.displayName = "PostsPage";
+
+export default withDisplayName(PostsPage);
