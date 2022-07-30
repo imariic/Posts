@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 500px;
-  height: 300px;
+  height: 400px;
   background: linear-gradient(
     to right bottom,
     ${(p) => p.theme.wageningenGreen} 0%,
@@ -15,4 +19,9 @@ export const Container = styled.div`
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const ButtonContainer = styled.div`
+  position: absolute;
+  bottom: ${(p) => p.theme.medium}px;
 `;

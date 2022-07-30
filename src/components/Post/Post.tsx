@@ -3,7 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { PostTitle, PostHeader, PostBody } from "components";
 import { UsersContext } from "providers";
 import { findUser } from "helpers";
-import { Container } from "./Post.styles";
+import { Button } from "ui";
+import { Container, ButtonContainer } from "./Post.styles";
 
 interface PostProps {
   post: PostType;
@@ -27,6 +28,12 @@ const Post: React.FC<PostProps> = ({ post }) => {
     });
   };
 
+  const handleShowComments = (
+    event: React.MouseEvent<HTMLInputElement, MouseEvent>
+  ) => {
+    event.stopPropagation();
+  };
+
   const renderName = () => {
     const { userId } = post;
     const user = findUser(userId, users);
@@ -40,6 +47,9 @@ const Post: React.FC<PostProps> = ({ post }) => {
       <PostTitle text={title} />
       <PostBody body={body} />
       {renderName()}
+      <ButtonContainer>
+        <Button title="Show comments" onClick={handleShowComments} />
+      </ButtonContainer>
     </Container>
   );
 };

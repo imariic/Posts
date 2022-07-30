@@ -17,4 +17,7 @@ export const colors = {
   blueGreen: "#088f8f",
   //white
   shadyWhite: "#EDEADE",
+  //blue
+  cadetBlue: "#5F9EA0",
+  jade: "#00A36C",
 };
