@@ -1,10 +1,11 @@
+//rem
 export const dimensions = {
-  xsmall: 4,
-  small: 8,
-  medium: 16,
-  xmedium: 24,
-  large: 32,
-  xlarge: 40,
+  xsmall: 0.25,
+  small: 0.5,
+  medium: 1,
+  xmedium: 1.5,
+  large: 2,
+  xlarge: 2.5,
 };
 
 export const colors = {

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Input = styled.input.attrs({
   type: "button",
 })`
-  height: 45px;
+  height: 2.813rem;
   background: linear-gradient(
     to right,
     ${(p) => p.theme.blueGreen} 0%,
@@ -11,5 +11,5 @@ export const Input = styled.input.attrs({
     ${(p) => p.theme.jade} 100%
   );
   border-width: 0px;
-  border-radius: ${(p) => p.theme.small}px;
+  border-radius: ${(p) => p.theme.small}rem;
 `;

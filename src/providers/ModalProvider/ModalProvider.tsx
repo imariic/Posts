@@ -37,7 +37,7 @@ const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
       {isVisible && (
         <Modal setIsVisible={setIsVisible}>
           {comments.map((item) => (
-            <Comment content={item.body} />
+            <Comment key={item.id} content={item.body} />
           ))}
         </Modal>
       )}
