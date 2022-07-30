@@ -10,5 +10,6 @@ export const Input = styled.input.attrs({
     ${(p) => p.theme.cadetBlue} 35%,
     ${(p) => p.theme.jade} 100%
   );
-  border-width: 1px;
+  border-width: 0px;
+  border-radius: ${(p) => p.theme.small}px;
 `;

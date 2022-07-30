@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PostTitle, PostHeader, PostBody } from "components";
-import { UsersContext } from "providers";
+import { ModalContext, UsersContext } from "providers";
 import { findUser } from "helpers";
-import { Button } from "ui";
+import { Button, Modal } from "ui";
 import { Container, ButtonContainer } from "./Post.styles";
 
 interface PostProps {
@@ -14,9 +14,14 @@ const Post: React.FC<PostProps> = ({ post }) => {
   const navigate = useNavigate();
   const params = useParams();
   const users = useContext(UsersContext);
+  const { setIsVisible } = useContext(ModalContext);
 
   const isNotTriggered = params.id;
   const { body, id, title } = post;
+
+  useEffect(() => {
+    setIsVisible(false);
+  }, []);
 
   const handlePostPress = () => {
     if (isNotTriggered) return;
@@ -32,6 +37,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
     event: React.MouseEvent<HTMLInputElement, MouseEvent>
   ) => {
     event.stopPropagation();
+    setIsVisible(true);
   };
 
   const renderName = () => {
