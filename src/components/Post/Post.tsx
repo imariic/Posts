@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PostTitle, PostHeader, PostBody } from "components";
 import { UsersContext } from "providers";
+import { findUser } from "helpers";
 import { Container } from "./Post.styles";
 
 interface PostProps {
@@ -28,7 +29,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
 
   const renderName = () => {
     const { userId } = post;
-    const user = users.find((item) => item.id === userId);
+    const user = findUser(userId, users);
 
     return <PostBody body={`Name: ${user?.name}`} />;
   };
