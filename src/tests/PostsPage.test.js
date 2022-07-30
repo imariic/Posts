@@ -46,5 +46,15 @@ describe("PostsPage", () => {
     expect(filter.value).toBe(inputValue);
     const element = await screen.findAllByText("Name: Chelsey Dietrich");
     expect(element).toBeDefined();
+
+    fireEvent.change(filter, {
+      target: {
+        value: "",
+      },
+    });
+
+    const element2 = await screen.findAllByText("Name: Leanne Graham");
+
+    expect(element2).toBeDefined();
   });
 });
