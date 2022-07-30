@@ -24,4 +24,5 @@ export const Container = styled.div`
 export const ButtonContainer = styled.div`
   position: absolute;
   bottom: ${(p) => p.theme.medium}rem;
+  margin-top: ${(p) => p.theme.small}rem;
 `;

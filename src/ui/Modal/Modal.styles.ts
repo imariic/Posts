@@ -12,11 +12,9 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   position: fixed;
-  width: 43.75rem;
-  height: 37.5rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: ${(p) => p.theme.xlarge}rem;
+  padding: ${(p) => p.theme.medium}rem 0.7rem;
 `;
