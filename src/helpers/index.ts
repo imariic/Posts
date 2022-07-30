@@ -1,4 +1,7 @@
-export const filterPosts = (searchTerm: string, posts: PostType[]) => {
+export const filterPosts = (
+  searchTerm: string,
+  posts: PostType[]
+): PostType[] => {
   const filteredPosts = posts.filter((item) =>
     item.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -6,7 +9,10 @@ export const filterPosts = (searchTerm: string, posts: PostType[]) => {
   return filteredPosts;
 };
 
-export const findUser = (userId: number, users: UserType[]) => {
+export const findUser = (
+  userId: number,
+  users: UserType[]
+): UserType | undefined => {
   const foundUser = users.find((item) => item.id === userId);
 
   return foundUser;

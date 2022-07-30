@@ -1,6 +1,6 @@
 import axiosInstance from "api";
 
-const getUserById = async (userId: number) => {
+const getUserById = async (userId: number): Promise<UserType[]> => {
   const response = await axiosInstance.get(`/users/${userId}`);
 
   if (response) return response.data;
@@ -8,7 +8,7 @@ const getUserById = async (userId: number) => {
   return [];
 };
 
-const getAllUsers = async () => {
+const getAllUsers = async (): Promise<UserType[]> => {
   const response = await axiosInstance.get("/users");
 
   if (response) return response.data;
